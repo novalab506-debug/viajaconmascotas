@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mascotas Viajeras - Expertos en Aventuras de 4 Patas</title>
+    <style>
+        :root {
+            --primary: #FF7A00;
+            --primary-hover: #E06B00;
+            --secondary: #1A2B32;
+            --light-bg: #F4F7F6;
+            --text: #2D3748;
+            --card-bg: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            color: var(--text);
+            background-color: var(--light-bg);
+            line-height: 1.6;
+        }
+
+       
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--secondary);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 25px; 
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--secondary);
+            font-weight: 600;
+            transition: color 0.3s;
+            font-size: 15px;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary);
+        }
+
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.55)), url('https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&q=80&w=1200') center/cover;
+            color: white;
+            text-align: center;
+            padding: 120px 20px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 46px;
+            margin-bottom: 20px;
+            font-weight: 800;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 35px;
+            opacity: 0.95;
+            font-weight: 400;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 14px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(255, 122, 0, 0.4);
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 122, 0, 0.6);
+        }
+
+        
+        .section {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #191b1f;
+            margin-bottom: 50px;
+            font-size: 18px;
+        }
+
+        .grid-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .step-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            border-bottom: 4px solid #E2E8F0;
+            transition: border-color 0.3s;
+        }
+
+        .step-card:hover {
+            border-color: var(--primary);
+        }
+
+        .step-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        /* Categories Section */
+        .grid-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .category-card {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        .category-img {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .category-body {
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .category-body h3 {
+            margin-bottom: 12px;
+            color: var(--secondary);
+            font-size: 22px;
+        }
+
+        .category-body p {
+            color: #4A5568;
+            font-size: 15px;
+            margin-bottom: 25px;
+        }
+
+        .btn-outline {
+            display: block;
+            text-align: center;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        
+        .featured-product {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            padding: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 60px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            align-items: center;
+            border-left: 6px solid var(--primary);
+        }
+
+        .featured-img {
+            flex: 1;
+            min-width: 280px;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .featured-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+   .featured-info {
+    flex: 1.5;
+    min-width: 300px;
+    padding-left: 25px;
+}
+
+        .badge {
+            background-color: #E6FFFA;
+            color: #234E52;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 15px;
+            border: 1px solid #B2F5EA;
+        }
+
+        .featured-info h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: var(--secondary);
+            font-weight: 700;
+        }
+
+        .featured-info ul {
+            list-style: none;
+            margin: 20px 0 30px 0;
+        }
+
+        .featured-info ul li {
+            margin-bottom: 10px;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-amazon {
+            background-color: #FF9900;
+            color: #1A1A1A;
+            box-shadow: 0 4px 15px rgba(255, 153, 0, 0.3);
+        }
+
+        .btn-amazon:hover {
+            background-color: #E68A00;
+            box-shadow: 0 6px 20px rgba(255, 153, 0, 0.5);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary);
+            color: #A0AEC0;
+            padding: 50px 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <header>
+        <div class="nav-container">
+            <header>
+    <div class="nav-container">
+        <a href="index.html" class="logo">🐾 Mascotas<span>Viajeras</span></a>
+    </div>
+</header>
+         
+
+        </div>
+    </header>
+
+   
+    <section class="hero">
+        <div class="hero-content">
+            <h1>¡La aventura es mejor en 4 patas!</h1>
+            <p>Simplificamos tus viajes. Analizamos y filtramos el mejor equipaje de Amazon para que tu mejor amigo viaje cómodo y seguro.</p>
+            <a href="#guias" class="btn">Comenzar a Explorar</a>
+        </div>
+    </section>
+
+    
+    <section class="section" style="margin-top: 50px; margin-bottom: 50px;">
+        <h2 class="section-title">¿Cómo te ayudamos a viajar sin estrés?</h2>
+        <p class="section-subtitle">Preparar el equipaje de tu peludo nunca fue tan fácil</p>
+        <div class="grid-steps">
+            <div class="step-card">
+                <div class="step-icon">🔍</div>
+                <h3>1. Filtramos Amazon</h3>
+                <p>Leemos miles de opiniones y descartamos productos de mala calidad.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-icon">✈️</div>
+                <h3>2. Verificamos Normativas</h3>
+                <p>Nos aseguramos de que cumplan las reglas de aerolíneas y tránsito.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-icon">🛒</div>
+                <h3>3. Eliges y Ahorras</h3>
+                <p>Te redirigimos al precio más bajo garantizado directamente en Amazon.</p>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="section" style="background-color: transparent;">
+        <h2 class="section-title">🔥 Producto mas vendido </h2>
+        <p class="section-subtitle">La opción favorita para viajar cómodo y seguro con tu mascota</p>
+        <div class="featured-product">
+            <div class="featured-img">
+                <img src="maletasherpa.jpg" alt="Maleta Transportadora Sherpa Original">
+            </div>
+            <div class="featured-info">
+                <span class="badge">⭐ RECOMENDADO POR VETERINARIOS</span>
+                <h3>Maleta Transportadora Sherpa Original</h3>
+                <p>Viajar en cabina requiere medidas milimétricas. Esta maleta no solo cumple con las normas internacionales, sino que ofrece el máximo confort para evitar la ansiedad de tu perro o gato durante el vuelo.</p>
+                <ul>
+                    <li>🟢 <strong>Estructura Flexible:</strong> Se adapta perfectamente bajo el asiento del avión.</li>
+                    <li>🟢 <strong>Ventilación Premium:</strong> Malla reforzada en 3 lados antidesgarros.</li>
+                    <li>🟢 <strong>Comodidad Absoluta:</strong> Incluye una cama interna lavable muy suave.</li>
+                </ul>
+                <!-- ESTE BOTÓN ENVÍA DIRECTO A AMAZON -->
+                <a href="https://www.amazon.com" target="_blank" class="btn btn-amazon">🛒 Ver Precio y Colores en Amazon</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATEGORÍAS QUE MANDAN A OTRAS PÁGINAS -->
+    <section class="section" id="guias">
+        <h2 class="section-title">Nuestras Guías Especializadas</h2>
+        <p class="section-subtitle">Selecciona tu tipo de viaje y descubre los mejores accesorios calificados</p>
+        <div class="grid-categories">
+            
+            <div class="category-card">
+                <div class="category-img" style="background-image: url('https://images.unsplash.com/photo-1544568100-847a948585b9?auto=format&fit=crop&q=80&w=400');"></div>
+                <div class="category-body">
+                    <h3>🚗 Viajes en Carro</h3>
+                    <p>Mantén tu carro limpio y a tu perro a salvo con los mejores arneses de impacto y protectores de asientos.</p>
+                    <!-- Este botón llevará a tu otra página interna en el futuro -->
+                    <a href="carros.html" class="btn-outline">Ver Guía de Carros →</a>
+                </div>
+            </div>
+
+            <div class="category-card">
+                <div class="category-img" style="background-image: url('https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&q=80&w=400');"></div>
+                <div class="category-body">
+                    <h3>✈️ Maletas de Avión</h3>
+                    <p>Evita sorpresas desagradables en el aeropuerto. Filtramos las mochilas y bolsos aprobados por aerolíneas.</p>
+                    <a href="aviones.html" class="btn-outline">Ver Guía de Aviones →</a>
+                </div>
+            </div>
+
+            <div class="category-card">
+                <div class="category-img" style="background-image: url('https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&q=80&w=400');"></div>
+                <div class="category-body">
+                    <h3>🥾 Senderismo y Camping</h3>
+                    <p>Platos colapsables, botellas de agua portátiles y mochilas ergonómicas para explorar la naturaleza.</p>
+                    <a href="camping.html" class="btn-outline">Ver Guía de Camping →</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+  <footer>
+
+    <p>© 2026 MascotasViajeras.com | Diseñado para Amantes de los Animales.</p>
+
+    <p style="margin:15px 0;">
+        <a href="sobre.html">Sobre Nosotros</a> |
+        <a href="privacidad.html">Política de Privacidad</a> |
+        <a href="contacto.html">Contacto</a>
+    </p>
+
+    <p style="margin-top: 15px; font-size: 12px; opacity: 0.7; max-width: 600px; margin-left: auto; margin-right: auto;">
+    En calidad de Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables. Amazon y el logotipo de Amazon son marcas comerciales de Amazon.com, Inc. o de sus sociedades filiales.
+    </p>
+
+</footer>
+</body>
+</html>
