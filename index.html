@@ -27,7 +27,6 @@
             line-height: 1.6;
         }
 
-       
         header {
             background-color: var(--card-bg);
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
@@ -40,7 +39,7 @@
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
-            justify-content: space-between;
+            justify-content: center; /* Centra el logo horizontalmente */
             align-items: center;
             padding: 18px 20px;
         }
@@ -56,25 +55,6 @@
             color: var(--primary);
         }
 
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 25px; 
-        }
-
-        .nav-menu a {
-            text-decoration: none;
-            color: var(--secondary);
-            font-weight: 600;
-            transition: color 0.3s;
-            font-size: 15px;
-        }
-
-        .nav-menu a:hover {
-            color: var(--primary);
-        }
-
-        
         .hero {
             background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.55)), url('https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&q=80&w=1200') center/cover;
             color: white;
@@ -111,6 +91,7 @@
             font-weight: bold;
             box-shadow: 0 4px 15px rgba(255, 122, 0, 0.4);
             transition: all 0.3s;
+            text-align: center;
         }
 
         .btn:hover {
@@ -119,7 +100,6 @@
             box-shadow: 0 6px 20px rgba(255, 122, 0, 0.6);
         }
 
-        
         .section {
             max-width: 1200px;
             margin: 80px auto;
@@ -166,7 +146,6 @@
             margin-bottom: 15px;
         }
 
-        /* Categories Section */
         .grid-categories {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -231,7 +210,6 @@
             color: white;
         }
 
-        
         .featured-product {
             background-color: var(--card-bg);
             border-radius: 16px;
@@ -257,11 +235,10 @@
             display: block;
         }
 
-   .featured-info {
-    flex: 1.5;
-    min-width: 300px;
-    padding-left: 25px;
-}
+        .featured-info {
+            flex: 1.5;
+            min-width: 300px;
+        }
 
         .badge {
             background-color: #E6FFFA;
@@ -306,7 +283,6 @@
             box-shadow: 0 6px 20px rgba(255, 153, 0, 0.5);
         }
 
-        /* Footer */
         footer {
             background-color: var(--secondary);
             color: #A0AEC0;
@@ -322,21 +298,13 @@
     </style>
 </head>
 <body>
-
     
     <header>
         <div class="nav-container">
-            <header>
-    <div class="nav-container">
-        <a href="index.html" class="logo">🐾 Mascotas<span>Viajeras</span></a>
-    </div>
-</header>
-         
-
+            <a href="index.html" class="logo">🐾 Mascotas<span>Viajeras</span></a>
         </div>
     </header>
 
-   
     <section class="hero">
         <div class="hero-content">
             <h1>¡La aventura es mejor en 4 patas!</h1>
@@ -345,7 +313,6 @@
         </div>
     </section>
 
-    
     <section class="section" style="margin-top: 50px; margin-bottom: 50px;">
         <h2 class="section-title">¿Cómo te ayudamos a viajar sin estrés?</h2>
         <p class="section-subtitle">Preparar el equipaje de tu peludo nunca fue tan fácil</p>
@@ -368,9 +335,8 @@
         </div>
     </section>
 
-    
-    <section class="section" style="background-color: transparent;">
-        <h2 class="section-title">🔥 Producto mas vendido </h2>
+    <section class="section">
+        <h2 class="section-title">🔥 Producto más vendido</h2>
         <p class="section-subtitle">La opción favorita para viajar cómodo y seguro con tu mascota</p>
         <div class="featured-product">
             <div class="featured-img">
@@ -383,15 +349,14 @@
                 <ul>
                     <li>🟢 <strong>Estructura Flexible:</strong> Se adapta perfectamente bajo el asiento del avión.</li>
                     <li>🟢 <strong>Ventilación Premium:</strong> Malla reforzada en 3 lados antidesgarros.</li>
-                    <li>🟢 <strong>Comodidad Absoluta:</strong> Incluye una cama interna lavable muy suave.</li>
+                    <li>🟢 <strong>Comodidad Absolute:</strong> Incluye una cama interna lavable muy suave.</li>
                 </ul>
-                <!-- ESTE BOTÓN ENVÍA DIRECTO A AMAZON -->
-                <a href="https://www.amazon.com" target="_blank" class="btn btn-amazon">🛒 Ver Precio y Colores en Amazon</a>
+            
+                <a href="https://amzn.to/3Qsx2w5" target="_blank" class="btn btn-amazon">🛒 Ver Precio y Colores en Amazon</a>
             </div>
         </div>
     </section>
 
-    <!-- CATEGORÍAS QUE MANDAN A OTRAS PÁGINAS -->
     <section class="section" id="guias">
         <h2 class="section-title">Nuestras Guías Especializadas</h2>
         <p class="section-subtitle">Selecciona tu tipo de viaje y descubre los mejores accesorios calificados</p>
@@ -402,7 +367,6 @@
                 <div class="category-body">
                     <h3>🚗 Viajes en Carro</h3>
                     <p>Mantén tu carro limpio y a tu perro a salvo con los mejores arneses de impacto y protectores de asientos.</p>
-                    <!-- Este botón llevará a tu otra página interna en el futuro -->
                     <a href="carros.html" class="btn-outline">Ver Guía de Carros →</a>
                 </div>
             </div>
@@ -428,21 +392,16 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
-  <footer>
-
-    <p>© 2026 MascotasViajeras.com | Diseñado para Amantes de los Animales.</p>
-
-    <p style="margin:15px 0;">
-        <a href="sobre.html">Sobre Nosotros</a> |
-        <a href="privacidad.html">Política de Privacidad</a> |
-        <a href="contacto.html">Contacto</a>
-    </p>
-
-    <p style="margin-top: 15px; font-size: 12px; opacity: 0.7; max-width: 600px; margin-left: auto; margin-right: auto;">
-    En calidad de Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables. Amazon y el logotipo de Amazon son marcas comerciales de Amazon.com, Inc. o de sus sociedades filiales.
-    </p>
-
-</footer>
+    <footer>
+        <p>© 2026 MascotasViajeras.com | Diseñado para Amantes de los Animales.</p>
+        <p style="margin:15px 0;">
+            <a href="sobre.html">Sobre Nosotros</a> |
+            <a href="privacidad.html">Política de Privacidad</a> |
+            <a href="contacto.html">Contacto</a>
+        </p>
+        <p style="margin-top: 15px; font-size: 12px; opacity: 0.7; max-width: 600px; margin-left: auto; margin-right: auto;">
+            En calidad de Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables. Amazon y el logotipo de Amazon son marcas comerciales de Amazon.com, Inc. o de sus sociedades filiales.
+        </p>
+    </footer>
 </body>
 </html>
