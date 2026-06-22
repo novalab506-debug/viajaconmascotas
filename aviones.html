@@ -35,12 +35,24 @@
             line-height: 1.7; 
             margin-bottom: 25px; 
         }
+        
+        /* Caja de pasos corregida: Con padding interno para evitar el efecto cortado */
         .guide-steps { 
-            background: #fffdf5; 
-            padding: 20px; 
+            background: #faf8f0; 
+            padding: 20px 25px; 
             border-left: 5px solid var(--secondary-color); 
-            margin-bottom: 30px; 
+            border-radius: 4px;
+            margin: 25px 0 35px 0; 
+            box-sizing: border-box;
         }
+        .guide-steps ul {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+        .guide-steps li {
+            margin-bottom: 12px;
+        }
+
         .product-box { 
             border: 2px solid var(--secondary-color); 
             border-radius: 12px; 
@@ -119,6 +131,7 @@
         </div>
     </div>
 
+    <!-- Producto 1: Transportadora -->
     <div class="product-box">
         <img src="transportadora.jpg" alt="Transportadora Aprobada">
         <div class="product-title">1. Transportador Aprobado por Aerolíneas</div>
@@ -126,6 +139,7 @@
         <a href="https://amzn.to/3STyvfw" target="_blank" class="btn-amazon">🛒 Ver transportadoras más vendida</a>
     </div>
 
+    <!-- Producto 2: Snuggle Puppy -->
     <div class="product-box">
         <img src="snuggle.jpg" alt="Snuggle Puppy">
         <div class="product-title">2. Snuggle Puppy: El Alivio contra el Estrés</div>
