@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://novalab506-debug.github.io/viajaconmascotas/sitemap.xml
